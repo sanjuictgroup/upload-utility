@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 alert alert-success alert-dismissible fade show" style="margin: 10px;" data-auto-dismiss="500" *ngIf="status">
+            <strong>Success!</strong> image has been saved successfully.
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+
+        <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div class="col-md-12 upload-css" align="center">
+            <div class="col-md-12">
+                <input #myInput type="file" (change)="onFileSelect($event)" class="form-control" name="file" id="file">
+            </div>
+            <div class="col-md-8 box-css"></div>
+            <div class="col-md-4 box-css">
+                <input type="submit" class="form-control btn btn-danger btn-css" name="save" id="save">
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
